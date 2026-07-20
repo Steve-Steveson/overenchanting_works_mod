@@ -2,6 +2,7 @@ package net.steveson.overenchanting.mixin;
 
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.ConditionalEffect;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -21,7 +22,8 @@ public class EnchantmentMixin {
 
     @Inject(method = "modifyAmmoCount", at = @At(value = "TAIL"))
     public void modifyAmmoCount(ServerLevel level, int enchantmentLevel, ItemStack tool, MutableFloat ammoCount, CallbackInfo ci) {
-        this.modifyItemFilteredCount(ModDataComponents.TIPPED_AMMO_USE.get(), level, enchantmentLevel - 1, tool, ammoCount);
+        int clampedLvl = Mth.clamp(enchantmentLevel, 0, 2);
+        this.modifyItemFilteredCount(ModDataComponents.TIPPED_AMMO_USE.get(), level, clampedLvl, tool, ammoCount);
     }
 
 

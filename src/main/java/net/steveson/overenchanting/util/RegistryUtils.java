@@ -1,6 +1,7 @@
 package net.steveson.overenchanting.util;
 
-//MIT License
+//		This code was copied from Farmer's Delight
+//		MIT License
 //
 //		Copyright (c) 2020 vectorwing
 //
