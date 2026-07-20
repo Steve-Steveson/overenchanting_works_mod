@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_21",
+  "package": "net.steveson.overenchanting.mixin",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "EnchantmentMixin",
+    "EnchantmentsMixin"
+  ]
+}

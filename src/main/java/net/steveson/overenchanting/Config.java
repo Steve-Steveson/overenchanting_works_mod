@@ -1,4 +1,4 @@
-package net.steveson.solidgoldstairs;
+package net.steveson.overenchanting;
 
 import java.util.List;
 
