@@ -1,0 +1,123 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+
+
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:sculk_shrieker",
+          "conditions": [
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "minecraft:silk_touch",
+                      "levels": {
+                        "max": 1,
+                        "min": 1
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+
+
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:sculk_shrieker",
+          "conditions": [
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "minecraft:silk_touch",
+                      "levels": {
+                        "min": 2
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": [
+                {
+                  "translate": "block.minecraft.sculk_shrieker",
+                  "color": "gold"
+                }
+              ],
+              "target": "item_name",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "minecraft:sculk_shrieker",
+                  "properties": {
+                    "can_summon": "true"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_lore",
+              "entity": "this",
+              "lore": [
+                {
+                  "text": "Can spawn Wardens",
+                  "color": "gray",
+                  "italic": false
+                }
+              ],
+              "mode": "append",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "minecraft:sculk_shrieker",
+                  "properties": {
+                    "can_summon": "true"
+                  }
+                }
+              ]
+            },
+
+            {
+              "function": "minecraft:copy_state",
+              "block": "minecraft:sculk_shrieker",
+              "properties": [
+                "can_summon"
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "minecraft:sculk_shrieker",
+                  "properties": {
+                    "can_summon": "true"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+
+
+
+
+      ]
+    }
+  ],
+  "random_sequence": "minecraft:blocks/sculk_shrieker"
+}
