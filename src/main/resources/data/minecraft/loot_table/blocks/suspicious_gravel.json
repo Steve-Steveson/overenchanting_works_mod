@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:suspicious_gravel",
+          "functions": [
+            {
+              "function": "overenchanting_works:copy_block_entity_data"
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "enchantments": [
+              {
+                "enchantment": "minecraft:silk_touch",
+                "levels": {
+                  "min": 2
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "random_sequence": "minecraft:blocks/suspicious_gravel"
+}

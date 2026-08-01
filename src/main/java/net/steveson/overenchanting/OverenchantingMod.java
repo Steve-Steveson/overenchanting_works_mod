@@ -1,6 +1,7 @@
 package net.steveson.overenchanting;
 
 import net.steveson.overenchanting.component.ModDataComponents;
+import net.steveson.overenchanting.loot.ModLootItemFunctions;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -37,6 +38,7 @@ public class OverenchantingMod {
 
 
         ModDataComponents.register(modEventBus);
+        ModLootItemFunctions.register(modEventBus);
 
 
         // Register the item to a creative tab
