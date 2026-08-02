@@ -11,13 +11,15 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 public class Config {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
-    public static final ModConfigSpec.BooleanValue LOG_DIRT_BLOCK = BUILDER
-            .comment("Whether to log the dirt block on common setup")
-            .define("logDirtBlock", true);
+//    public static final ModConfigSpec.BooleanValue LOG_DIRT_BLOCK = BUILDER
+//            .comment("Whether to log the dirt block on common setup")
+//            .define("logDirtBlock", true);
 
-    public static final ModConfigSpec.IntValue MAGIC_NUMBER = BUILDER
-            .comment("A magic number")
-            .defineInRange("magicNumber", 42, 0, Integer.MAX_VALUE);
+    public static final ModConfigSpec.IntValue SPAWN_DELAY = BUILDER
+            .comment("The delay value for Spawners picked up with Silk Touch 2 in tick")
+            .comment("After mobs spawn, the delay is randomized between 200 and 800")
+            .comment("At 0, mobs can spawn instantly upon block placement")
+            .defineInRange("magicNumber", 0, 0, Short.MAX_VALUE);
 
     public static final ModConfigSpec.ConfigValue<String> MAGIC_NUMBER_INTRODUCTION = BUILDER
             .comment("What you want the introduction message to be for the magic number")
