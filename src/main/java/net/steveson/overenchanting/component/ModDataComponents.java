@@ -47,6 +47,20 @@ public class ModDataComponents {
             )
     );
 
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<List<ConditionalEffect<EnchantmentEntityEffect>>>> HIT_BLOCK_LVL3 = ENCHANTMENT_EFFECT_COMPONENTS.registerComponentType(
+            "hit_block_lvl3",
+            builder -> builder.persistent(
+                    ConditionalEffect.codec(EnchantmentEntityEffect.CODEC, LootContextParamSets.HIT_BLOCK).listOf()
+            )
+    );
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<List<TargetedConditionalEffect<EnchantmentEntityEffect>>>> POST_ATTACK_LVL3 = ENCHANTMENT_EFFECT_COMPONENTS.registerComponentType(
+            "post_attack_lvl3",
+            builder -> builder.persistent(
+                    TargetedConditionalEffect.codec(EnchantmentEntityEffect.CODEC, LootContextParamSets.ENCHANTED_DAMAGE).listOf()
+            )
+    );
+
 
 
 //    private static <T>DeferredHolder<DataComponentType<?>, DataComponentType<T>> register(String name, UnaryOperator<DataComponentType.Builder<T>> builderUnaryOperator) {

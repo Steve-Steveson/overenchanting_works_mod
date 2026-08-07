@@ -51,6 +51,13 @@ public abstract class EnchantmentMixin {
                     blockHitContext(level, enchantmentLevel, entity, pos, state),
                     p_346325_ -> p_346325_.apply(level, enchantmentLevel, item, entity, pos)
             );
+            if (enchantmentLevel > 2) {
+                applyEffects(
+                        this.getEffects(ModDataComponents.HIT_BLOCK_LVL3.get()),
+                        blockHitContext(level, enchantmentLevel, entity, pos, state),
+                        p_346325_ -> p_346325_.apply(level, enchantmentLevel, item, entity, pos)
+                );
+            }
         }
     }
 
@@ -61,6 +68,13 @@ public abstract class EnchantmentMixin {
             for (TargetedConditionalEffect<EnchantmentEntityEffect> targetedconditionaleffect : this.getEffects(ModDataComponents.POST_ATTACK_LVL2.get())) {
                 if (target == targetedconditionaleffect.enchanted()) {
                     doPostAttack(targetedconditionaleffect, level, enchantmentLevel, item, entity, damageSource);
+                }
+            }
+            if (enchantmentLevel > 2) {
+                for (TargetedConditionalEffect<EnchantmentEntityEffect> targetedconditionaleffect : this.getEffects(ModDataComponents.POST_ATTACK_LVL3.get())) {
+                    if (target == targetedconditionaleffect.enchanted()) {
+                        doPostAttack(targetedconditionaleffect, level, enchantmentLevel, item, entity, damageSource);
+                    }
                 }
             }
         }

@@ -11,24 +11,36 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 public class Config {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
-//    public static final ModConfigSpec.BooleanValue LOG_DIRT_BLOCK = BUILDER
-//            .comment("Whether to log the dirt block on common setup")
-//            .define("logDirtBlock", true);
+    public static final ModConfigSpec.BooleanValue SWIM_MINE_FASTER = BUILDER
+            .comment(" Whether higher levels of Aqua Affinity should reduce the dig speed penalty for not touching the sea floor")
+            .define("aquaAffinityForSwimming", true);
 
-    public static final ModConfigSpec.IntValue SPAWN_DELAY = BUILDER
-            .comment("The delay value for Spawners picked up with Silk Touch 2 in tick")
-            .comment("After mobs spawn, the delay is randomized between 200 and 800")
-            .comment("At 0, mobs can spawn instantly upon block placement")
-            .defineInRange("magicNumber", 0, 0, Short.MAX_VALUE);
+    public static final ModConfigSpec.DoubleValue AQUA_AFFINITY_2_SPEED = BUILDER
+            .comment(" How fast should a swimming player mine with Aqua Affinity 2?")
+            .comment(" Units are in multiples of mining speed standing on land")
+            .defineInRange("aquaAffinity2DigSpeed", 1, 0.2, 1.8);
 
-    public static final ModConfigSpec.ConfigValue<String> MAGIC_NUMBER_INTRODUCTION = BUILDER
-            .comment("What you want the introduction message to be for the magic number")
-            .define("magicNumberIntroduction", "The magic number is... ");
+    public static final ModConfigSpec.DoubleValue AQUA_AFFINITY_SPEED_PER_LEVEL = BUILDER
+            .comment(" How much additional dig speed should a swimming player get with Aqua Affinity for each level beyond 2?")
+            .comment(" Vanilla MAX: 0.8")
+            .defineInRange("aquaAffinityDigSpeedPerLevel", 0.4, 0, Double.MAX_VALUE);
 
-    // a list of strings that are treated as resource locations for items
-    public static final ModConfigSpec.ConfigValue<List<? extends String>> ITEM_STRINGS = BUILDER
-            .comment("A list of items to log on common setup.")
-            .defineListAllowEmpty("items", List.of("minecraft:iron_ingot"), () -> "", Config::validateItemName);
+    public static final ModConfigSpec.DoubleValue VANILLA_AQUA_AFFINITY_SPEED_PER_LEVEL = BUILDER
+            .comment(" How much additional dig speed should a swimming player get with Aqua Affinity for each level beyond 2?")
+            .defineInRange("aquaAffinityDigSpeedPerLevel", 0.8, 0, Double.MAX_VALUE);
+
+//    public static final ModConfigSpec.BooleanValue BOBBING_MINE_FASTER = BUILDER
+//            .comment(" Whether Aqua Affinity 3 and above should give dig speed bonuses when floating with your head above water")
+//            .comment(" Turn this off if you change the speed bonus you get from Aqua Affinity through a datapack and don't want weird dig speeds ")
+//            .define("aquaAffinityForBobbingByLevel", true);
+
+//    public static final ModConfigSpec.IntValue SPAWN_DELAY = BUILDER
+//            .comment("The delay value for Spawners picked up with Silk Touch 2 in tick")
+//            .comment("After mobs spawn, the delay is randomized between 200 and 800")
+//            .comment("At 0, mobs can spawn instantly upon block placement")
+//            .defineInRange("magicNumber", 0, 0, Short.MAX_VALUE);
+
+
 
     static final ModConfigSpec SPEC = BUILDER.build();
 

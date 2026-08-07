@@ -6,7 +6,6 @@
       "bonus_rolls": 0,
       "entries": [
 
-
         {
           "type": "minecraft:item",
           "name": "minecraft:sculk_shrieker",
@@ -30,7 +29,6 @@
           ]
         },
 
-
         {
           "type": "minecraft:item",
           "name": "minecraft:sculk_shrieker",
@@ -53,31 +51,11 @@
           ],
           "functions": [
             {
-              "function": "minecraft:set_name",
-              "entity": "this",
-              "name": [
-                {
-                  "translate": "block.minecraft.sculk_shrieker",
-                  "color": "gold"
-                }
-              ],
-              "target": "item_name",
-              "conditions": [
-                {
-                  "condition": "minecraft:block_state_property",
-                  "block": "minecraft:sculk_shrieker",
-                  "properties": {
-                    "can_summon": "true"
-                  }
-                }
-              ]
-            },
-            {
               "function": "minecraft:set_lore",
               "entity": "this",
               "lore": [
                 {
-                  "text": "Can spawn Wardens",
+                  "text": "Spawns Wardens",
                   "color": "gray",
                   "italic": false
                 }
@@ -93,7 +71,6 @@
                 }
               ]
             },
-
             {
               "function": "minecraft:copy_state",
               "block": "minecraft:sculk_shrieker",
@@ -112,9 +89,6 @@
             }
           ]
         }
-
-
-
 
       ]
     }
