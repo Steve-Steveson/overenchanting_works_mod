@@ -18,16 +18,17 @@ public class Config {
     public static final ModConfigSpec.DoubleValue AQUA_AFFINITY_2_SPEED = BUILDER
             .comment(" How fast should a swimming player mine with Aqua Affinity 2?")
             .comment(" Units are in multiples of mining speed standing on land")
-            .defineInRange("aquaAffinity2DigSpeed", 1, 0.2, 1.8);
+            .comment(" Vanilla MAX: 1.8")
+            .defineInRange("aquaAffinity2DigSpeed", 1, 0.2, 20.0);
 
     public static final ModConfigSpec.DoubleValue AQUA_AFFINITY_SPEED_PER_LEVEL = BUILDER
             .comment(" How much additional dig speed should a swimming player get with Aqua Affinity for each level beyond 2?")
             .comment(" Vanilla MAX: 0.8")
-            .defineInRange("aquaAffinityDigSpeedPerLevel", 0.4, 0, Double.MAX_VALUE);
+            .defineInRange("aquaAffinityDigSpeedPerLevel", 0.4, 0, 20.0);
 
-    public static final ModConfigSpec.DoubleValue VANILLA_AQUA_AFFINITY_SPEED_PER_LEVEL = BUILDER
-            .comment(" How much additional dig speed should a swimming player get with Aqua Affinity for each level beyond 2?")
-            .defineInRange("aquaAffinityDigSpeedPerLevel", 0.8, 0, Double.MAX_VALUE);
+//    public static final ModConfigSpec.DoubleValue VANILLA_AQUA_AFFINITY_SPEED_PER_LEVEL = BUILDER
+//            .comment(" How much additional dig speed should a swimming player get with Aqua Affinity for each level beyond 2?")
+//            .defineInRange("aquaAffinityDigSpeedPerLevel", 0.8, 0, Double.MAX_VALUE);
 
 //    public static final ModConfigSpec.BooleanValue BOBBING_MINE_FASTER = BUILDER
 //            .comment(" Whether Aqua Affinity 3 and above should give dig speed bonuses when floating with your head above water")
@@ -44,7 +45,7 @@ public class Config {
 
     static final ModConfigSpec SPEC = BUILDER.build();
 
-    private static boolean validateItemName(final Object obj) {
-        return obj instanceof String itemName && BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(itemName));
-    }
+//    private static boolean validateItemName(final Object obj) {
+//        return obj instanceof String itemName && BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(itemName));
+//    }
 }
