@@ -2,8 +2,8 @@
   "overenchanting_works.configuration.title": "Overenchanting Works Configs",
   "overenchanting_works.configuration.section.overenchanting_works.common.toml": "Overenchanting Works Configs",
   "overenchanting_works.configuration.section.overenchanting_works.common.toml.title": "Overenchanting Works Configs",
-  "overenchanting_works.configuration.aquaAffinityForSwimming": "Item List",
-  "overenchanting_works.configuration.aquaAffinity2DigSpeed": "Log Dirt Block",
-  "overenchanting_works.configuration.aquaAffinityDigSpeedPerLevel": "Magic Number Text",
+  "overenchanting_works.configuration.aquaAffinityForSwimming": "Swim Mine Faster",
+  "overenchanting_works.configuration.aquaAffinity2DigSpeed": "Swim Dig Speed @ LVL 2",
+  "overenchanting_works.configuration.aquaAffinityDigSpeedPerLevel": "Swim Dig Speed for more LVLs",
   "overenchanting_works.configuration.aquaAffinityForBobbingByLevel": "Magic Number"
 }
